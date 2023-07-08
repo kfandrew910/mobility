@@ -1,0 +1,104 @@
+FT_PUTCHAR.C
+-------------
+
+#include <unistd.h>
+
+void ft_putchar(char c)
+{
+	write(1, &c, 1);
+}
+
+-------------------------
+rush00:
+-------
+
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   rush00.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rrincon- <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/07/08 12:22:59 by rrincon-          #+#    #+#             */
+/*   Updated: 2023/07/08 14:34:55 by rrincon-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "ft_putchar.c"
+
+void	lastRow(int columns){
+	int k = 0;
+	while( k!= columns){
+		if (k == 0){
+			ft_putchar('C');
+        }
+		else if(k == columns -1){
+			ft_putchar('A');
+        	ft_putchar('\n');
+        }else{
+			ft_putchar('B');
+        }
+        k++;
+	}
+}
+
+void	firstRow(int columns){
+	int		k = 0;
+	while (k != columns){
+                if (k == 0){
+                    ft_putchar('A');
+                }else if(k == columns - 1){
+					ft_putchar('C');
+					ft_putchar('\n');
+                }
+                else{
+                    ft_putchar('B');
+                }
+                k++;
+                }
+}
+
+void	midRow(int columns){
+	int 	k = 0;
+		while ( k!= columns){
+			if ( k == 0 ){
+				ft_putchar('B');
+			}
+			else if ( k == columns-1){
+				ft_putchar('B');
+				ft_putchar('\n');
+			}
+			else{
+				write(1, " ", 1);
+			}
+			k++;
+		}
+}
+void	rush00(int columns, int rows)
+{
+	int		i = 0;
+	int		k = 0;
+	while (i != rows){
+			if(i == 0){
+				firstRow(columns);
+				i++;
+			}
+			else if( i == rows - 1){
+				lastRow(columns);
+				i++;
+            }
+			else{
+				midRow(columns);
+				i++;
+			}
+	}
+}
+--------------------------------------------
+main.c:
+-------
+
+int     main(void)
+{
+    rush00(50, 30);
+    return (0);
+}
