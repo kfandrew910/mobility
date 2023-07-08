@@ -12,38 +12,42 @@ void ft_putchar(char c)
 rush00:
 -------
 
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   rush00.c                                           :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: rrincon- <marvin@42.fr>                    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/08 12:22:59 by rrincon-          #+#    #+#             */
-/*   Updated: 2023/07/08 14:34:55 by rrincon-         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "ft_putchar.c"
 
 void	last_row(int columns){
-	int k = 0;
+
+	int k;
+
+ k = = 0;
+
 	while( k!= columns){
+
 		if (k == 0){
+
    ft_putchar('\n');
 			ft_putchar('C');
+
         }
 		else if(k == columns -1){
+
 			ft_putchar('A');
+
         }else{
+
 			ft_putchar('B');
+
         }
-        k++;
+
+   k++;
+
 	}
 }
 
 void	first_row(int columns){
-	int		k = 0;
+
+	int		k;
+ k = 0;
+
 	while (k != columns){
                 if (k == 0){
                     ft_putchar('A');
