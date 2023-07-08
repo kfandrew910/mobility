@@ -26,15 +26,15 @@ rush00:
 
 #include "ft_putchar.c"
 
-void	lastRow(int columns){
+void	last_row(int columns){
 	int k = 0;
 	while( k!= columns){
 		if (k == 0){
+   ft_putchar('\n');
 			ft_putchar('C');
         }
 		else if(k == columns -1){
 			ft_putchar('A');
-        	ft_putchar('\n');
         }else{
 			ft_putchar('B');
         }
@@ -42,14 +42,13 @@ void	lastRow(int columns){
 	}
 }
 
-void	firstRow(int columns){
+void	first_row(int columns){
 	int		k = 0;
 	while (k != columns){
                 if (k == 0){
                     ft_putchar('A');
                 }else if(k == columns - 1){
 					ft_putchar('C');
-					ft_putchar('\n');
                 }
                 else{
                     ft_putchar('B');
@@ -58,15 +57,15 @@ void	firstRow(int columns){
                 }
 }
 
-void	midRow(int columns){
+void	mid_row(int columns){
 	int 	k = 0;
 		while ( k!= columns){
 			if ( k == 0 ){
+   ft_putchar('\n');
 				ft_putchar('B');
 			}
 			else if ( k == columns-1){
 				ft_putchar('B');
-				ft_putchar('\n');
 			}
 			else{
 				write(1, " ", 1);
@@ -74,21 +73,21 @@ void	midRow(int columns){
 			k++;
 		}
 }
-void	rush00(int columns, int rows)
+void	rush(int columns, int rows)
 {
 	int		i = 0;
 	int		k = 0;
 	while (i != rows){
 			if(i == 0){
-				firstRow(columns);
+				first_row(columns);
 				i++;
 			}
 			else if( i == rows - 1){
-				lastRow(columns);
+				las_row(columns);
 				i++;
             }
 			else{
-				midRow(columns);
+				mid_row(columns);
 				i++;
 			}
 	}
@@ -99,6 +98,6 @@ main.c:
 
 int     main(void)
 {
-    rush00(50, 30);
+    rush(5, 3);
     return (0);
 }
