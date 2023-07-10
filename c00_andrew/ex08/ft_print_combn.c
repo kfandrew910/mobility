@@ -21,7 +21,6 @@ void ft_print_combn(int n)
 			write(1, &digits[j], 1);
 			if(digits[j] != 57-n+1)
 				write(1, ", ", 2);
-			digits[j+1] = digits[j]+1;
 			j++;
 		}
 		i++;
