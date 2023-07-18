@@ -36,6 +36,16 @@ int ft_int_length(int n)
 	return length;
 }
 
+int	check_num(int nb)
+{
+	if (nb == -2147483648)
+	{
+		write(1, "-2147483648", 11);
+		return (0);
+	}
+	return (1);
+}
+
 void ft_putnbr(int nb)
 {
 	int printable;
@@ -43,6 +53,8 @@ void ft_putnbr(int nb)
 	int size;
 	int i;
 
+	if (check_num(nb) == 0)
+		return ;
 	printable = nb;
 	remover = 0;
 	size = ft_int_length(nb);
