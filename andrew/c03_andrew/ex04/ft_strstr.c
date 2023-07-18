@@ -10,28 +10,27 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-char *ft_strstr(char *str, char *to_find)
+char	*ft_strstr(char *str, char *to_find)
 {
-	int i;
-	int j;
-	int k;
+	int		i;
+	char	*found;
 
-	i = 0;
-	while (str[i] != 0)
+	found = str;
+	if (to_find[0] == 0)
+		return (found);
+	while (*found != 0)
 	{
-		if (str[i] == to_find[0])
+		if (found[0] == to_find[0])
 		{
-			k = i;
-			j = 0;
-			while (str[k] == to_find[j])
-			{
-				k++;
-				j++;
-			}
-			if (to_find[j] == 0)
-				return (str + i);
+			i = 1;
+			while (found[i] == to_find[i]
+				&& found[i] != 0
+				&& to_find[i] != 0)
+				i++;
+			if (to_find[i] == 0)
+				return (found);
 		}
-		i++;
+		found++;
 	}
 	return (NULL);
 }
