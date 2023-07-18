@@ -1,8 +1,8 @@
 int	ft_strlen(char *str)
 {
-	int	lenght;
+	int	length;
 
-	lenght = 0;
+	length = 0;
 	while (str[length] != '\0')
 		length++;
 
