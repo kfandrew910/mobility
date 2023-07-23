@@ -17,6 +17,7 @@ int	ft_atoi(char *str)
 	i = 0;
 	nb = 0;
 	sign = 1;
+	//Añadir entre 9 y 13
 	while (str[i] == ' ')
 		i++;
 	while (checksign(str[i]) != 0)
