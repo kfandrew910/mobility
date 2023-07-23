@@ -6,11 +6,29 @@
 /*   By: akovacs- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/23 18:13:48 by akovacs-          #+#    #+#             */
-/*   Updated: 2023/07/23 18:14:06 by akovacs-         ###   ########.fr       */
+/*   Updated: 2023/07/23 18:26:49 by akovacs-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int ft_sqrt(int nb)
 {
-	return ();
+	int i;
+	int found;
+
+	if (nb < 0)
+		return (0);
+	i = 0;
+	found = 0;
+	if (nb % 2 != 0)
+		i++;
+	while (i * i <= nb)
+	{
+		if (i * i == nb)
+			found = 1;
+		i = i + 2;
+	}
+	if (found == 1)
+		return (i - 2);
+	else
+		return (0);
 }
