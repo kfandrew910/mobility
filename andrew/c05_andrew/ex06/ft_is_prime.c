@@ -6,11 +6,26 @@
 /*   By: akovacs- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/23 18:14:24 by akovacs-          #+#    #+#             */
-/*   Updated: 2023/07/23 18:14:40 by akovacs-         ###   ########.fr       */
+/*   Updated: 2023/07/23 18:37:50 by akovacs-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int ft_is_prime(int nb)
 {
+	int is_prime;
+	int i;
+
+	is_prime = 0;
+	i = 0;
+	if(nb < 0)
+		nb = -nb;
+	if(nb < 2)
+		return (is_prime);
+	if(nb % 2 != 0)
+		i++;
+	while ()
+	{
+		i = i + 2;
+	}
 	return ();
 }
