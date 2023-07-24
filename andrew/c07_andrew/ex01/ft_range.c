@@ -6,10 +6,27 @@
 /*   By: akovacs- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/24 15:36:36 by akovacs-          #+#    #+#             */
-/*   Updated: 2023/07/24 15:36:52 by akovacs-         ###   ########.fr       */
+/*   Updated: 2023/07/24 16:17:09 by akovacs-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int *ft_range(int min, int max)
 {
+	int	*array;
+	int len;
+	int i;
+
+	if (max <= min)
+		return (0);
+	len = max - min;
+	if (len < 0)
+		len = -len;
+	array = (int *)malloc(len * sizeof(int));
+	i = 0;
+	while (i < len)
+	{
+		array[i] = min + i;
+		i++;
+	}
+	return (array);
 }
