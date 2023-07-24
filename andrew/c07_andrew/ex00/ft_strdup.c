@@ -40,9 +40,7 @@ char *ft_strdup(char *src)
 {
 	char	*ptr;
 	int 	len;
-	int		i;
 
-	i = 0;
 	len = ft_strlen(src);
 	ptr = (char *)malloc(len * sizeof(char));
 	ptr = ft_strcpy(ptr, src);

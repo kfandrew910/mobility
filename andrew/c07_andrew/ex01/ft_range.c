@@ -22,6 +22,8 @@ int *ft_range(int min, int max)
 	if (len < 0)
 		len = -len;
 	array = (int *)malloc(len * sizeof(int));
+	if (array == 0)
+		return(0);
 	i = 0;
 	while (i < len)
 	{
