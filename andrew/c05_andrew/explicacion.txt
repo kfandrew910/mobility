@@ -161,3 +161,67 @@ BIEN! funciona ya que 2^3 = 2 * 2 * 2 = 4 * 2 = 8
 ex04:
 -----
 
+Fibonacci.... vamos a explicarte que es Fibonacci
+
+La serie de Fibonacci es una operacion matematica infinita
+donde LA SUMA DE LOS DOS NUMEROS ANTERIORES ES IGUAL AL ACTUAL.
+
+De la serie de Fibonacci sale el numero Aureo (Numero de oro) y
+el patron que sigue CASI toda la naturaleza (y el tamaño de nuestras tarjetas).
+
+La serie debe ser de POSITIVOS, osea de [0 - ∞)
+
+La serie va asi: 0 1 1 2 3 5 8 13 21 34 55 89... ∞
+
+El programa te pide que te devuelva un numero segun un INDICE, osea
+el numero de fibonacci.
+Asi seria el indice: 
+
+Fibonacci:		   0 1 1 2 3 5 8 13 21 34 55 89... ∞
+			   | | | | | | |  |  |  |  |  |    |
+Indice:		   0 1 2 3 4 5 6  7  8  9 10 11... ∞
+
+Obviamente los indices SIEMPRE SON 0 O MÁS!!!!!!!!!!
+
+int ft_fibonacci(int index) <--- El indice que te pide
+{
+	int res; <--- Sitio donde almacenar la operacion
+	if(index < 0) <--- Si el indice es menor que 0 que devuelva (-1)
+		return (-1);
+	if(index == 0) <--- Si el indice es 0, devuelve 0
+		return (0);
+	res = ft_fibonacci(index - 1) + ft_fibonacci(index - 2);<-- Explicacion larga abajo
+	if(res < 0) <--- Si la operacion por algun casual es negativa, pasalo a positivo
+		res  = -res;
+	return (res); <--- Devuelveme el numero de fibonacci
+}
+
+Explicacion larga: un numero x de fibonacci es igual a la suma de los dos anteriores
+	    Ejemplo: i = (i - 1) + (i - 2)		3(i = 4) = 2(i = 3) + 1(i = 1)
+
+Esto te devolvera un numero de la serie de Fibonacci según el índice (por ejemplo 4)
+
+escribo fib() para resumir ft_fibonacci()
+
+res = fib(3) + fib(2)
+|	    -		 -
+|
+res = fib( fib(2) + fib(1) ) + fib( fib(1) + fib(0) )
+|	    -----------------	     -----------------
+|
+res = fib( fib( fib(1) + fib(0) ) + fib( fib(0) + fib(-1) ) ) + fib( fib( fib(0) + fib(-1) ) + fib(0) )
+|	    --------------------------------------------------	  ----------------------------------
+|
+res = fib( (   1    +   0	  ) + (   0 	+ 	1 ) ) + fib( 0 	+ 	 1  + 	 0 )
+|	    ------------------------------------------------		---------------------------
+|
+res = (2) + (1)
+|	 -	 -
+|
+res = 3
+	-
+
+ex05: WARNING: FALTA OPTIMIZACION
+-----
+
+EXPLICACION PRONTO!!!
