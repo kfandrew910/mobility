@@ -58,7 +58,7 @@ int	ft_recursive_factorial(int nb) <--- El numero del que sacaremos el factorial
 }
 
 
-Esto al final devolvera el que le pasaste (por ejemplo, 4) y devolvera en este orden:
+Esto al final devolvera el factorial del que le pasaste (por ejemplo, 4) en este orden:
 
 4 * funcion(3 * funcion(2 * funcion(1 * funcion(0)) ) )
 	A		B		C		D
@@ -74,7 +74,7 @@ D: En D te multiplicara 1 (2-1) por 1 (porque funcion de (1-1 = 0) devuelve 1).
 
 1: 1 * 1 = 1
 
-2: 2 * 1 = 1
+2: 2 * 1 = 2
 
 3: 3 * 2 = 6
 
@@ -83,3 +83,81 @@ D: En D te multiplicara 1 (2-1) por 1 (porque funcion de (1-1 = 0) devuelve 1).
 
 ex02:
 -----
+
+En este ejercicio te pide que devuelvas un numero elevado a power
+de manera iterativa.
+
+nb^(power)
+
+Por ejemplo:
+
+3^4 = 3 x 3 x 3 x 3 = 81
+
+DATO CURIOSO: Un numero elevado a 0 da 1 (2^1 = 1 * 2 = 2 | 2^0 = 1 )
+
+int	ft_iterative_power(int nb, int power) <--- Le pasas el numero a elevar, y por cuanto
+{
+	int	el_n; <--- Creamos una variable que almacene el numero elevado
+	int	i; <--- Contador para iterar
+
+	el_n = 1; <--- Inicializar a 1 porque cualquier numero a algo es 1 * x * x.... 
+	i = 0; <--- Tu me entiendes ;)
+	if (power < 0) <--- Si el numero elevado es negativo devuelve 0 (Explicacion en Extra1)
+		return (0);
+	while (i < power) <--- Se cumple mientras que i es menor que las veces que lo elevamos
+	{
+		el_n = el_n * nb; <--- Elevacion
+		i++; <--- Iteramos
+	}
+	return (el_n); <--- Cuando se multiplique las X veces devuelve el numero elevado
+}
+
+Extra1: Un numero elevado a positivo se multiplica, pero en negativo se divide.
+
+2^2 = 2 * 2 = 4		2^(-2) = 1 / (2 * 2) = 1 / 4 = 0.25 (0 ya que usamos enteros)
+
+
+ex03:
+-----
+
+Ahora sabiendo que es un numero elevado a X hacerlo recursivo
+
+
+int	ft_recursive_power(int nb, int power) <--- Le pasas el numero a elevar, y por cuanto
+{
+	if (power < 0) <--- Comprobar si el numero AL QUE VAS A ELEVAR (power) es negativo (Extra1 anterior)
+		return (0);
+	if (power == 0) <--- Comprobar si el numero AL QUE VAS A ELEVAR (power) es 0 (Dato curioso anterior)
+		return (1);
+	return (nb * ft_recursive_power(nb, (power - 1)));
+}		\------- Si no es ninguno anterior se llama a si mismo con el numero elevado a power - 1
+
+
+Esto al final devolvera el numero elevado (2^3) en este orden:
+
+2 * funcion( 2 * funcion( 2 * funcion( 1 ) ) )
+	A		B		C	    D
+	4		3		2	    1
+
+A: En A multiplicara 2 por lo que sea que te devuelva lo de dentro (2^2).
+
+B: En B te multiplicara 2 por lo que sea que te devuelva lo de dentro (2^1).
+
+C: En C te multiplicara 2 por lo que sea que te devuelva lo de dentro (2^0).
+
+D: En D te multiplicara 2 por 1 (porque funcion de (2^0) devuelve 1).
+
+1: 1
+
+2: 2 * 1 = 2
+
+3: 2 * 2 = 4
+
+4: 2 * 4 = 8
+
+BIEN! funciona ya que 2^3 = 2 * 2 * 2 = 4 * 2 = 8
+
+
+ex04:
+-----
+
