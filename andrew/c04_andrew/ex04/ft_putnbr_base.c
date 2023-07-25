@@ -6,7 +6,7 @@
 /*   By: akovacs- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/20 12:00:52 by akovacs-          #+#    #+#             */
-/*   Updated: 2023/07/20 15:01:54 by akovacs-         ###   ########.fr       */
+/*   Updated: 2023/07/24 11:53:55 by akovacs-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,10 @@ int	ft_strlen(char *str)
 	return (length);
 }
 
-void    create_array(char *str, int nbr, int size, char *base)
+void	create_array(char *str, int nbr, int size, char *base)
 {
-	int i;
-	
+	int	i;
+
 	i = 0;
 	while (nbr > size)
 	{
@@ -39,8 +39,8 @@ void    create_array(char *str, int nbr, int size, char *base)
 
 int	check_exceptions(char *base)
 {
-	int i;
-	int j;
+	int	i;
+	int	j;
 
 	if (ft_strlen(base) < 2)
 		return (1);
@@ -63,11 +63,12 @@ int	check_exceptions(char *base)
 	return (0);
 }
 
-void ft_putnbr_base(int nbr, char *base)
+void	ft_putnbr_base(int nbr, char *base)
 {
-	int size;
+	int	size;
 	int	i;
 	int	final_nbr[255];
+
 	if (check_exceptions(base) == 1)
 		return ;
 	if (nbr < 0)
@@ -85,10 +86,6 @@ void ft_putnbr_base(int nbr, char *base)
 			nbr--;
 		i++;
 	}
-	i--;
-	while ( i >= 0)
-	{
-		write (1, &base[final_nbr[i]] , 1);
-		i--;
-	}
+	while (--i >= 0)
+		write (1, &base[final_nbr[i]], 1);
 }
