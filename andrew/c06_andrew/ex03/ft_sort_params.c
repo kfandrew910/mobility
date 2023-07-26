@@ -6,7 +6,7 @@
 /*   By: akovacs- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/24 12:19:42 by akovacs-          #+#    #+#             */
-/*   Updated: 2023/07/24 14:17:34 by akovacs-         ###   ########.fr       */
+/*   Updated: 2023/07/26 12:18:47 by akovacs-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,10 +44,10 @@ char	**sort_args(char *args[])
 	int		j;
 	char	*tmp;
 
-	i = 0;
+	i = 1;
 	while (args[i] != 0)
 	{
-		j = 0;
+		j = 1;
 		while (args[j] != 0 && args[j + 1] != 0)
 		{
 			if (ft_strcmp(args[j], args[j + 1]) > 0)
